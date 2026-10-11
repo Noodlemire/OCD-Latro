@@ -9,7 +9,7 @@ SMODS.Atlas{
 
 local old_uibox_init = UIBox.init
 function UIBox:init(args)
-	if math.random(3) == 1 then
+	if pseudorandom("ocd", 1, 2) == 1 then
 		OCD.nudge_ui(args.definition, OCD.count_ui(args.definition)+1)
 	end
 	old_uibox_init(self, args)
@@ -35,7 +35,7 @@ function OCD.nudge_ui(node, odds)
 	if not node then return end
 	if node.config and node.n ~= G.UIT.ROOT then
 		for k, v in pairs(node.config) do
-			if OCD.config_entries[k] and math.random(odds) then
+			if OCD.config_entries[k] and pseudorandom("ocd", 1, odds) == 1 then
 				node.config[k] = OCD.config_entries[k](v)
 			end
 		end
@@ -57,8 +57,8 @@ function OCD.register_config_entry(key, func)
 end
 
 function OCD.common_size_nudge(v)
-	local margin = math.max(0.002, v * 0.05)
-	return math.random(v + math.random() * margin - margin/2)
+	local margin = math.max(0.01, v * 0.5)
+	return v + pseudorandom("ocd") * margin - margin/2
 end
 
 for _, k in ipairs({"h", "minh", "maxh", "w", "minw", "maxw", "padding", "r"}) do
@@ -73,7 +73,7 @@ OCD.register_config_entry("align", function(v)
 			table.insert(other_aligns, a)
 		end
 	end
-	return other_aligns[math.random(#other_aligns)]
+	return pseudorandom_element(other_aligns, "ocd")
 end)
 
 OCD.register_config_entry("colour", function(v)
@@ -81,14 +81,14 @@ OCD.register_config_entry("colour", function(v)
 	for i = 1, #v do
 		new_color[i] = v[i]
 	end
-	local k = math.random(3)
-	new_color[k] = math.random()
+	local k = pseudorandom("ocd", 1, 3)
+	new_color[k] = pseudorandom("ocd")
 	return new_color
 end)
 
 OCD.register_config_entry("text", function(v)
-	local offset = string.rep(" ", math.random(3))
-	if math.random(2) == 1 then
+	local offset = string.rep(" ", pseudorandom("ocd", 1, 3))
+	if pseudorandom("ocd", 1, 2) == 1 then
 		return v..offset
 	else
 		return offset..v
