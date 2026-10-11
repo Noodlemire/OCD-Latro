@@ -1,0 +1,17 @@
+{
+	"id": "OCDLatro",
+	"author": ["Noodlemire"],
+	"description": "Makes the visuals perfect.",
+	"prefix": "ocd",
+	"main_file": "main.lua",
+	"priority": 0,
+	"badge_colour": "e64437",
+	"badge_text_colour": "a5cdd1",
+	"display_name": "OCD-Latro",
+	"version": "1.0.0",
+	"name":"OCD-Latro",
+	"dependencies": [
+		"Steamodded (>=26.829.0)",
+		"Lovely (>=0.7.1)"
+	]
+}
