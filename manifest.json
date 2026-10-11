@@ -1,7 +1,7 @@
 {
-	"name": "OCD-Latro",
+	"name": "OCDLatro",
 	"description": "Makes the visuals perfect.",
-	"version_number": "1.0.0",
-	"website_url": "https://github.com/Noodlemire/Balatro-Dream-BBQ-Mod",
+	"version_number": "1.0.1",
+	"website_url": "https://github.com/Noodlemire/OCD-Latro",
 	"dependencies": ["Steamodded-Steamodded-26.829.0"]
 }

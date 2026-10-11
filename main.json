@@ -8,7 +8,7 @@
 	"badge_colour": "e64437",
 	"badge_text_colour": "a5cdd1",
 	"display_name": "OCD-Latro",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"name":"OCD-Latro",
 	"dependencies": [
 		"Steamodded (>=26.829.0)",
